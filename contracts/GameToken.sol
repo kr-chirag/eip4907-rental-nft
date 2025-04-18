@@ -24,6 +24,10 @@ contract GameToken is
     error CurrentlyRented();
     error InvalidExpireTime();
 
+    constructor() {
+        _disableInitializers();
+    }
+
     function initialize(address initialOwner) public initializer {
         __ERC721_init("GameToken", "GTK");
         __Ownable_init(initialOwner);
